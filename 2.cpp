@@ -62,4 +62,5 @@ int main() {
     Worker worker2(surname, salary, yearOfJoining);
     cout << worker2.toString() << endl;
     delete worker2;
+    
 }
