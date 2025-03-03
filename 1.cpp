@@ -1,42 +1,48 @@
 #include <iostream>
+#include <string>
+using namespace std;
 
-class Person
-{
-public:
-    Person(std::string name, unsigned age)
-    {
-        this->name = name;
-        this->age = age;
-    }
-    void print() const
-    {
-        std::cout << "Name: " << name << "\tAge: " << age << std::endl;
-    }
-protected:
-    std::string name;  
+class Numbers {
 private:
-    unsigned age;
-};
-class Employee: public Person
-{
+    int x;
+    int y;
+
 public:
-    Employee(std::string name, unsigned age, std::string company): Person(name, age)
-    {
-        this->company = company;
+    void SetX(int valueX) {
+        x = valueX;
     }
-    void printEmployee() const
-    {
-        std::cout << name << " works in " << company << std::endl;
+    void SetY(int valueY) {
+        y = valueY;
     }
-private:
-    std::string company;    // ��������
+    Numbers(int b,int c) {
+        SetX(b);
+        SetY(c);
+    }
+
+    string Info() {
+        return "x: " + to_string(x) + " y: " +to_string(y);
+    }
+
+    int integerDivision() {
+        if (y == 0) {
+            cout << "Error: y can`t be zero" << endl;
+            return 0;
+        }
+        return x / y;
+    }
 };
 
-int main()
-{
-    Person person {"Tom", 38};
-    person.print();     // Name: Tom       Age: 38
+int main() {
+    int x, y;
+    cout << "Enter x: ";
+    cin >> x;
+    cout << "Enter y: ";
+    cin >> y;
 
-    Employee employee {"Bob", 42, "Microsoft"};
-    employee.printEmployee();   // Bob works in Microsoft
+    Numbers obj(x, y);
+    string t = obj.Info();
+    cout << t <<endl;
+
+    int result = obj.integerDivision();
+    cout << "Result: " << result << endl;
 }
