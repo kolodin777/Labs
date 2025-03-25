@@ -10,11 +10,7 @@ private:
     int yearOfJoining;
 
 public:
-
-    Worker() : surname(""), salary(0.0), yearOfJoining(2000) {}
-
     Worker(string s, double sal, int year) : surname(s), salary(sal), yearOfJoining(year) {}
-
 
     ~Worker() {
         cout << "Object worker " << surname << " is destroyed." << endl;
