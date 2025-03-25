@@ -45,7 +45,7 @@ public:
 int main() {
 
     Worker worker1("Ivanov", 50000, 2015);
-    cout << worker1.toString() << endl;
+    cout << worker1.toString() <<endl<< "\n";
 
 
     string surname;
@@ -58,9 +58,10 @@ int main() {
     cin >> salary;
     cout << "Enter year of joining worker: ";
     cin >> yearOfJoining;
+    cout << "\n";
 
     Worker worker2(surname, salary, yearOfJoining);
     cout << worker2.toString() << endl;
-    delete worker2;
-    
+
+
 }
